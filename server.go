@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -12,7 +11,7 @@ var store map[string]string
 
 func main() {
 
-	service := ":1201"
+	service := ":15000"
 	tcpAddr, err := net.ResolveTCPAddr("tcp4", service)
 	checkError(err)
 
@@ -20,11 +19,6 @@ func main() {
 	checkError(err)
 
 	store = make(map[string]string)
-
-	setValue("abc", "dhef")
-	setValue("123", "23")
-	setValue("vib", "gh")
-	setValue("ff", "hh")
 
 	for {
 		conn, err := listener.Accept()
